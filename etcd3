@@ -1,0 +1,7 @@
+etcd --name infra3 --initial-advertise-peer-urls http://10.100.0.200:2380 \
+  --listen-peer-urls http://10.100.0.200:2380 \
+  --listen-client-urls http://10.100.0.200:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls http://10.100.0.200:2379 \
+  --initial-cluster-token etcd-cluster-1 \
+  --initial-cluster infra0=http://192.168.204.129:2380,infra1=http://192.168.204.130:2380,infra2=http://192.168.204.131:2380,infra3=http://10.100.0.200:2380 \
+  --initial-cluster-state new
